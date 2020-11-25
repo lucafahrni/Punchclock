@@ -35,7 +35,7 @@ public class CategoryController {
         this.categoryService = categoryService;
         this.userDetailsService = userDetailsService;
 
-    }
+    }   
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Category createCategory(@RequestBody Category category, Principal principal) {

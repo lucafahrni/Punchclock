@@ -20,16 +20,10 @@ import java.util.List;
 public class CategoryService {
     private CategoryRepository categoryRepository;
 
-    public CategoryService(CategoryRepository categoryRepository) {
-        this.categoryRepository = categoryRepository;
-    }
+    public CategoryService(CategoryRepository categoryRepository) { this.categoryRepository = categoryRepository; }
 
     public Category createCategory(Category category) { return categoryRepository.saveAndFlush(category); }
     public Category updateCategory(Category category) { return categoryRepository.save(category); }
-    public void deleteCategory(Long id) {
-        categoryRepository.deleteById(id);
-    }
-    public List<Category> findAll(){
-        return categoryRepository.findAll();
-    }
+    public void deleteCategory(Long id) { categoryRepository.deleteById(id); }
+    public List<Category> findAll(){ return categoryRepository.findAll(); }
 }
