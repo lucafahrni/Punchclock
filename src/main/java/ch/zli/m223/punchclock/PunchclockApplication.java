@@ -5,6 +5,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+/**
+ * @author Luca Fahrni
+ * @version 25.11.2020
+ * @Class PunchclockApplication
+ */
 @SpringBootApplication
 public class PunchclockApplication {
 

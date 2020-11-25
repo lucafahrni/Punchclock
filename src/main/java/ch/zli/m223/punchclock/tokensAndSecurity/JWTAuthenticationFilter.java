@@ -21,7 +21,11 @@ import java.util.Date;
 import static ch.zli.m223.punchclock.tokensAndSecurity.SecurityConstants.*;
 import static com.auth0.jwt.algorithms.Algorithm.HMAC512;
 
-
+/**
+ * @author Luca Fahrni
+ * @version 25.11.2020
+ * @Class JWTAuthenticationFilter
+ */
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     private AuthenticationManager authenticationManager;
 

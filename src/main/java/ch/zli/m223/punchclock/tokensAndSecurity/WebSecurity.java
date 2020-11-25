@@ -15,6 +15,11 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import static ch.zli.m223.punchclock.tokensAndSecurity.SecurityConstants.SIGN_UP_URL;
 
+/**
+ * @author Luca Fahrni
+ * @version 25.11.2020
+ * @Class WebSecurity
+ */
 @EnableWebSecurity
 public class WebSecurity extends WebSecurityConfigurerAdapter {
     private UserDetailsServiceImpl userDetailsService;

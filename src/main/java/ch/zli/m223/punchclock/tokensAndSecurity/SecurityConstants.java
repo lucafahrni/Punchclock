@@ -1,5 +1,10 @@
 package ch.zli.m223.punchclock.tokensAndSecurity;
 
+/**
+ * @author Luca Fahrni
+ * @version 25.11.2020
+ * @Class SecurityConstants
+ */
 public class SecurityConstants {
     public static final String SECRET = "SecretKeyToGenJWTs";
     public static final long EXPIRATION_TIME = 864_000_000; // 10 days

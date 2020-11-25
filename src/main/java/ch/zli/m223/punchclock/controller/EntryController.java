@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
+/**
+ * @author Luca Fahrni
+ * @version 25.11.2020
+ * @Class EntryController
+ */
 @RestController
 @RequestMapping("/entries")
 public class EntryController {

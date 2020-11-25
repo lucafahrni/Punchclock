@@ -7,6 +7,11 @@ import org.jvnet.hk2.annotations.Service;
 
 import java.util.List;
 
+/**
+ * @author Luca Fahrni
+ * @version 25.11.2020
+ * @Class CategoryService
+ */
 @Service
 public class CategoryService {
     private CategoryRepository categoryRepository;

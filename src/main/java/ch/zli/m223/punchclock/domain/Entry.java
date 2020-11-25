@@ -8,6 +8,11 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+/**
+ * @author Luca Fahrni
+ * @version 25.11.2020
+ * @Class Entry
+ */
 @Entity
 public class Entry {
 

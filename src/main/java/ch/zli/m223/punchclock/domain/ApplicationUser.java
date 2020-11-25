@@ -2,6 +2,11 @@ package ch.zli.m223.punchclock.domain;
 
 import javax.persistence.*;
 
+/**
+ * @author Luca Fahrni
+ * @version 25.11.2020
+ * @Class ApplicationUser
+ */
 @Entity
 public class ApplicationUser {
     @Id

@@ -16,6 +16,11 @@ import java.util.ArrayList;
 
 import static ch.zli.m223.punchclock.tokensAndSecurity.SecurityConstants.*;
 
+/**
+ * @author Luca Fahrni
+ * @version 25.11.2020
+ * @Class JWTAuthorizationFilter
+ */
 public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 
     public JWTAuthorizationFilter(AuthenticationManager authManager) {

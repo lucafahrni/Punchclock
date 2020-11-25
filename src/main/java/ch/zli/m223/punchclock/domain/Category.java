@@ -3,6 +3,11 @@ package ch.zli.m223.punchclock.domain;
 import javax.persistence.*;
 import java.util.List;
 
+/**
+ * @author Luca Fahrni
+ * @version 25.11.2020
+ * @Class Category
+ */
 @Entity
 public class Category {
     @Id

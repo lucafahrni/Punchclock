@@ -1,6 +1,5 @@
 package ch.zli.m223.punchclock.domain;
 
-import ch.zli.m223.punchclock.domain.ApplicationUser;
 import ch.zli.m223.punchclock.repository.ApplicationUserRepository;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,6 +9,11 @@ import org.springframework.stereotype.Service;
 
 import static java.util.Collections.emptyList;
 
+/**
+ * @author Luca Fahrni
+ * @version 25.11.2020
+ * @Class UserDetailsServiceImpl
+ */
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
     private ApplicationUserRepository applicationUserRepository;

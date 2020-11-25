@@ -12,6 +12,11 @@ import javax.ws.rs.BadRequestException;
 import java.security.Principal;
 import java.util.List;
 
+/**
+ * @author Luca Fahrni
+ * @version 25.11.2020
+ * @Class CategoryController
+ */
 @RestController
 @RequestMapping("/categories")
 public class CategoryController {

@@ -6,6 +6,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * @author Luca Fahrni
+ * @version 25.11.2020
+ * @Class EntryService
+ */
 @Service
 public class EntryService {
     private EntryRepository entryRepository;
