@@ -1,2 +1,5 @@
-.idea
-punchclock.mv.db
+# Ignore .idea files
+.idea/
+
+# Ignore punchclock maven database
+.db
