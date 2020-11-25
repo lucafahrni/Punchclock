@@ -1,9 +1,13 @@
 package ch.zli.m223.punchclock.service;
 
 import ch.zli.m223.punchclock.domain.Category;
+import ch.zli.m223.punchclock.domain.Entry;
 import ch.zli.m223.punchclock.domain.User;
 import ch.zli.m223.punchclock.repository.CategoryRepository;
+
 import org.jvnet.hk2.annotations.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 
 import java.util.List;
 

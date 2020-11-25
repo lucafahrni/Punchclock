@@ -4,6 +4,10 @@ import ch.zli.m223.punchclock.domain.Category;
 import ch.zli.m223.punchclock.service.CategoryService;
 import ch.zli.m223.punchclock.domain.User;
 import ch.zli.m223.punchclock.domain.UserDetailsServiceImpl;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,7 +26,12 @@ public class CategoryController {
     private CategoryService categoryService;
     private UserDetailsServiceImpl userDetailsService;
 
-    public CategoryController(CategoryService categoryService, UserDetailsServiceImpl userDetailsService) {
+    @Bean
+    public CategoryService categoryService() {
+        return categoryService;
+    }
+
+    public CategoryController(@Lazy CategoryService categoryService   , UserDetailsServiceImpl userDetailsService) {
         this.categoryService = categoryService;
         this.userDetailsService = userDetailsService;
 
