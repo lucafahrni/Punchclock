@@ -1,13 +1,13 @@
 package ch.zli.m223.punchclock.controller;
 
 import ch.zli.m223.punchclock.domain.Category;
+import ch.zli.m223.punchclock.domain.Entry;
 import ch.zli.m223.punchclock.service.CategoryService;
 import ch.zli.m223.punchclock.user.ApplicationUser;
 import ch.zli.m223.punchclock.user.UserDetailsServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.constraints.PastOrPresent;
 import javax.ws.rs.BadRequestException;
 import java.security.Principal;
 import java.util.List;
@@ -34,7 +34,7 @@ public class CategoryController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<Category> getAllCategories(){
+    public List<Entry> getAllCategories(){
         return categoryService.findAll();
     }
 
@@ -43,12 +43,12 @@ public class CategoryController {
     public void deleteCategory(@PathVariable long id, Principal principal) {
         ApplicationUser applicationUser = userDetailsService.getUserByUsername(principal.getName());
         if(!applicationUser.getRole().equals("admin")) throw new BadRequestException();
-        return categoryService.deleteCategory(id);
+        categoryService.deleteCategory(id);
     }
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void updateCategory(@RequestBody Category category, Principal principal) {
+    public Category updateCategory(@RequestBody Category category, Principal principal) {
         ApplicationUser applicationUser = userDetailsService.getUserByUsername(principal.getName());
         if (!applicationUser.getRole().equals("admin")) throw new BadRequestException();
         return categoryService.updateCategory(category);
