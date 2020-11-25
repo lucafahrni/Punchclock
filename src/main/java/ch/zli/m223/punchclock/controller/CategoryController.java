@@ -3,8 +3,8 @@ package ch.zli.m223.punchclock.controller;
 import ch.zli.m223.punchclock.domain.Category;
 import ch.zli.m223.punchclock.domain.Entry;
 import ch.zli.m223.punchclock.service.CategoryService;
-import ch.zli.m223.punchclock.user.ApplicationUser;
-import ch.zli.m223.punchclock.user.UserDetailsServiceImpl;
+import ch.zli.m223.punchclock.domain.ApplicationUser;
+import ch.zli.m223.punchclock.domain.UserDetailsServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

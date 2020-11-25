@@ -1,6 +1,6 @@
-package ch.zli.m223.punchclock.security;
+package ch.zli.m223.punchclock.tokensAndSecurity;
 
-import ch.zli.m223.punchclock.user.ApplicationUser;
+import ch.zli.m223.punchclock.domain.ApplicationUser;
 import com.auth0.jwt.JWT;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
-import static ch.zli.m223.punchclock.security.SecurityConstants.*;
+import static ch.zli.m223.punchclock.tokensAndSecurity.SecurityConstants.*;
 import static com.auth0.jwt.algorithms.Algorithm.HMAC512;
 
 

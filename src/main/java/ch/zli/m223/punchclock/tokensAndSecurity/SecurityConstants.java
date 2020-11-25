@@ -1,4 +1,4 @@
-package ch.zli.m223.punchclock.security;
+package ch.zli.m223.punchclock.tokensAndSecurity;
 
 public class SecurityConstants {
     public static final String SECRET = "SecretKeyToGenJWTs";

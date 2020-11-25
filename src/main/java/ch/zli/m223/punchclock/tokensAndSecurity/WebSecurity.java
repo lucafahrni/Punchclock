@@ -1,6 +1,6 @@
-package ch.zli.m223.punchclock.security;
+package ch.zli.m223.punchclock.tokensAndSecurity;
 
-import ch.zli.m223.punchclock.user.UserDetailsServiceImpl;
+import ch.zli.m223.punchclock.domain.UserDetailsServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -13,7 +13,7 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import static ch.zli.m223.punchclock.security.SecurityConstants.SIGN_UP_URL;
+import static ch.zli.m223.punchclock.tokensAndSecurity.SecurityConstants.SIGN_UP_URL;
 
 @EnableWebSecurity
 public class WebSecurity extends WebSecurityConfigurerAdapter {
