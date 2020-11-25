@@ -4,14 +4,15 @@ import ch.zli.m223.punchclock.domain.Category;
 import ch.zli.m223.punchclock.service.CategoryService;
 import ch.zli.m223.punchclock.user.ApplicationUser;
 import ch.zli.m223.punchclock.user.UserDetailsServiceImpl;
-import org.h2.engine.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.PastOrPresent;
 import javax.ws.rs.BadRequestException;
 import java.security.Principal;
+import java.util.List;
 
-@RequestController
+@RestController
 @RequestMapping("/categories")
 public class CategoryController {
     private CategoryService categoryService;
@@ -22,12 +23,35 @@ public class CategoryController {
         this.userDetailsService = userDetailsService;
 
     }
-        @PostMapping
-        @ResponseStatus(HttpStatus.OK)
-        public Category createCategory(@RequestBody Category category, Principal principal) {
+    @PostMapping
+    @ResponseStatus(HttpStatus.OK)
+
+    public Category createCategory(@RequestBody Category category, Principal principal) {
             ApplicationUser applicationUser = userDetailsService.getUserByUsername(principal.getName());
             if(!applicationUser.getRole().equals("admin")) throw new BadRequestException();
             return categoryService.createCategory(category);
         }
 
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<Category> getAllCategories(){
+        return categoryService.findAll();
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteCategory(@PathVariable long id, Principal principal) {
+        ApplicationUser applicationUser = userDetailsService.getUserByUsername(principal.getName());
+        if(!applicationUser.getRole().equals("admin")) throw new BadRequestException();
+        return categoryService.deleteCategory(id);
+    }
+
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void updateCategory(@RequestBody Category category, Principal principal) {
+        ApplicationUser applicationUser = userDetailsService.getUserByUsername(principal.getName());
+        if (!applicationUser.getRole().equals("admin")) throw new BadRequestException();
+        return categoryService.updateCategory(category);
+    }
 }
+
