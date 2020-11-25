@@ -12,6 +12,7 @@ public class ApplicationUser {
     private long id;
     private String username;
     private String password;
+    private String role;
 
     public long getId() {
         return id;
@@ -32,4 +33,13 @@ public class ApplicationUser {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
 }
