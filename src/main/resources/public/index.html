@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Punchclock Client</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <script src="script.js" type="application/javascript"></script>
+    </head>
+    <body>
+        <form id="createEntryForm">
+            <label for="checkIn">Check in</label>
+            <input type="date" name="checkInDate" id="checkIn" >
+            <input type="time" name="checkInTime" >
+            <label for="checkOut">Check out</label>
+            <input type="date" name="checkOutDate" id="checkOut" >
+            <input type="time" name="checkOutTime" >
+            <input type="submit" value="Save" />
+            <p></p>
+            <input type="text" value="" id="deleteId">
+            <input type="delete" value="Delete" />
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Check in</th>
+                    <th>Check out</th>
+                </tr>
+            </thead>
+            <tbody id="entryDisplay">
+                <tr>
+                    <td colspan="3">Loading...</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

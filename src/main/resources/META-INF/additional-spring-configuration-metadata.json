@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "auth0.issuer",
+      "type": "java.lang.String",
+      "description": "Description for auth0.issuer."
+  }
+] }
