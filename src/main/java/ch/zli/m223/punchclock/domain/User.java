@@ -8,7 +8,7 @@ import javax.persistence.*;
  * @Class ApplicationUser
  */
 @Entity
-public class ApplicationUser {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

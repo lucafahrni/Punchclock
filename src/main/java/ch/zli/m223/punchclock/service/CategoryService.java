@@ -1,7 +1,7 @@
 package ch.zli.m223.punchclock.service;
 
 import ch.zli.m223.punchclock.domain.Category;
-import ch.zli.m223.punchclock.domain.Entry;
+import ch.zli.m223.punchclock.domain.User;
 import ch.zli.m223.punchclock.repository.CategoryRepository;
 import org.jvnet.hk2.annotations.Service;
 
@@ -20,19 +20,12 @@ public class CategoryService {
         this.categoryRepository = categoryRepository;
     }
 
-    public Category createCategory(Category category) {
-        return category.save(category);
-    }
-
-    public Category updateCategory(Category category) {
-        return categoryRepository.save(category);
-    }
-
+    public Category createCategory(Category category) { return categoryRepository.saveAndFlush(category); }
+    public Category updateCategory(Category category) { return categoryRepository.save(category); }
     public void deleteCategory(Long id) {
         categoryRepository.deleteById(id);
     }
-
-    public List<Entry> findAll(){
+    public List<User> findAll(){
         return categoryRepository.findAll();
     }
 }

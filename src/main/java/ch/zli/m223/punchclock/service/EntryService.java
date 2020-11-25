@@ -22,11 +22,10 @@ public class EntryService {
     public Entry createEntry(Entry entry) {
         return entryRepository.saveAndFlush(entry);
     }
-
+    public Entry updateEntry(Entry entry) { return entryRepository.save(entry); }
     public void deleteEntry(Long id) {
         entryRepository.deleteById(id);
     }
-
     public List<Entry> findAll() {
         return entryRepository.findAll();
     }
