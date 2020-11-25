@@ -34,8 +34,4 @@ public class CategoryService {
     public List<Entry> findAll(){
         return categoryRepository.findAll();
     }
-
-    public Optional<Entry> findById(Long id) {
-        return categoryRepository.findById(id);
-    }
 }

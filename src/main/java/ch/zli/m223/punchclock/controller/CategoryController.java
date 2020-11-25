@@ -32,12 +32,6 @@ public class CategoryController {
             return categoryService.createCategory(category);
         }
 
-    @GetMapping
-    @ResponseStatus(HttpStatus.OK)
-    public List<Entry> getAllCategories(){
-        return categoryService.findAll();
-    }
-
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCategory(@PathVariable long id, Principal principal) {
@@ -52,6 +46,12 @@ public class CategoryController {
         ApplicationUser applicationUser = userDetailsService.getUserByUsername(principal.getName());
         if (!applicationUser.getRole().equals("admin")) throw new BadRequestException();
         return categoryService.updateCategory(category);
+    }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<Entry> getAllCategories(){
+        return categoryService.findAll();
     }
 }
 
