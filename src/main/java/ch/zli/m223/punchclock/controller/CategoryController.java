@@ -53,7 +53,7 @@ public class CategoryController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<User> getAllCategories(){
+    public List<Category> getAllCategories(){
         return categoryService.findAll();
     }
 }
