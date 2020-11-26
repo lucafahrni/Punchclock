@@ -29,6 +29,14 @@ public class UserController {
     @PostMapping("/sign-up")
     public void signUp(@RequestBody User user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        user.setRole("User");
         applicationUserRepository.save(user);
+    }
+
+    @GetMapping("/role")
+    @ResponseStatus(HttpStatus.OK)
+    public String role(Principal principal) {
+        User applicationUser = userDetailsService.getUserByUsername(principal.getName());
+        return applicationUser.getRole();
     }
 }

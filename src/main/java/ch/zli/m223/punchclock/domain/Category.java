@@ -19,7 +19,6 @@ public class Category {
 
     @OneToMany
     private List<Entry> entries;
-
     public Long getId() {
         return id;
     }

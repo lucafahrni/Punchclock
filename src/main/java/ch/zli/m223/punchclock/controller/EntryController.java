@@ -38,7 +38,7 @@ public class EntryController {
     @ResponseStatus(HttpStatus.CREATED)
     public Entry createCategory(@RequestBody Entry entry, Principal principal) {
         User applicationUser = userDetailsService.getUserByUsername(principal.getName());
-        if(!applicationUser.getRole().equals("admin")) throw new BadRequestException();
+        entry.setUser(applicationUser);
         return entryService.createEntry(entry);
     }
 
@@ -46,13 +46,12 @@ public class EntryController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteEntry(@PathVariable long id, Principal principal) {
         User applicationUser = userDetailsService.getUserByUsername(principal.getName());
-        if(!applicationUser.getRole().equals("admin")) throw new BadRequestException();
         entryService.deleteEntry(id);
     }
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Entry updateEntry(@RequestBody Entry entry, Principal principal) {
+    public Entry updateEntry(@RequestBody long id, @RequestBody Entry entry, Principal principal) {
         User applicationUser = userDetailsService.getUserByUsername(principal.getName());
         if (!applicationUser.getRole().equals("admin")) throw new BadRequestException();
         return entryService.updateEntry(entry);
