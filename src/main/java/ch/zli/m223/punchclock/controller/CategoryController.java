@@ -40,7 +40,6 @@ public class CategoryController {
     @ResponseStatus(HttpStatus.CREATED)
     public Category createCategory(@RequestBody Category category, Principal principal) {
             User applicationUser = userDetailsService.getUserByUsername(principal.getName());
-            if(!applicationUser.getRole().equals("admin")) throw new BadRequestException();
             return categoryService.createCategory(category);
     }
 
@@ -48,22 +47,21 @@ public class CategoryController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCategory(@PathVariable long id, Principal principal) {
         User applicationUser = userDetailsService.getUserByUsername(principal.getName());
-        if(!applicationUser.getRole().equals("admin")) throw new BadRequestException();
         categoryService.deleteCategory(id);
-    }
-
-    @PutMapping("/{id}")
-    @ResponseStatus(HttpStatus.OK)
-    public Category updateCategory(@RequestBody Category category, Principal principal) {
-        User applicationUser = userDetailsService.getUserByUsername(principal.getName());
-        if (!applicationUser.getRole().equals("admin")) throw new BadRequestException();
-        return categoryService.updateCategory(category);
     }
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<Category> getAllCategories(){
         return categoryService.findAll();
+    }
+
+
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Category updateCategory(@RequestBody Category category, Principal principal) {
+        User applicationUser = userDetailsService.getUserByUsername(principal.getName());
+        return categoryService.updateCategory(category);
     }
 }
 

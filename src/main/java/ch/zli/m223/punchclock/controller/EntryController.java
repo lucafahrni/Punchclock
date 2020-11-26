@@ -45,7 +45,6 @@ public class EntryController {
     @ResponseStatus(HttpStatus.OK)
     public Entry updateEntry(@RequestBody long id, @RequestBody Entry entry, Principal principal) {
         User applicationUser = userDetailsService.getUserByUsername(principal.getName());
-        if (!applicationUser.getRole().equals("admin")) throw new BadRequestException();
         return entryService.updateEntry(entry);
     }
 
