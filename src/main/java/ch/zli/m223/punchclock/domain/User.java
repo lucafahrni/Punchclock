@@ -1,6 +1,7 @@
 package ch.zli.m223.punchclock.domain;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * @author Luca Fahrni

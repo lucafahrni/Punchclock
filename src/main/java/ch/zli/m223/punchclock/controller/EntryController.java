@@ -20,8 +20,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/entries")
 public class EntryController {
-    private EntryService entryService;
-    private UserDetailsServiceImpl userDetailsService;
+    private final EntryService entryService;
+    private final UserDetailsServiceImpl userDetailsService;
 
     public EntryController(EntryService entryService, UserDetailsServiceImpl userDetailsService) {
         this.entryService = entryService;

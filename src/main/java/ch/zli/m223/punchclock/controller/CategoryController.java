@@ -23,8 +23,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/categories")
 public class CategoryController {
-    private CategoryService categoryService;
-    private UserDetailsServiceImpl userDetailsService;
+    private final CategoryService categoryService;
+    private final UserDetailsServiceImpl userDetailsService;
 
     @Bean
     public CategoryService categoryService() {
@@ -35,7 +35,7 @@ public class CategoryController {
         this.categoryService = categoryService;
         this.userDetailsService = userDetailsService;
 
-    }   
+    }
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Category createCategory(@RequestBody Category category, Principal principal) {

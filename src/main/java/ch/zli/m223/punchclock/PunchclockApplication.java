@@ -16,15 +16,9 @@ public class PunchclockApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PunchclockApplication.class, args);
 	}
-
-	@SpringBootApplication
-	public class SpringbootAuthUpdatedApplication {
-
 		@Bean
 		public BCryptPasswordEncoder bCryptPasswordEncoder() {
 			return new BCryptPasswordEncoder();
 		}
-
-	}
 }
 

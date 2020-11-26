@@ -28,10 +28,9 @@ public class Entry {
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     @Column(nullable = false)
     private LocalDateTime checkOut;
-    @Column(nullable = false)
+
     @ManyToOne
     private User  applicationUser;
-    @Column(nullable = false)
     @ManyToOne
     private Category category;
 
@@ -53,8 +52,8 @@ public class Entry {
     public void setCheckOut(LocalDateTime checkOut) {
         this.checkOut = checkOut;
     }
-    public User getUser() { return applicationUser }
-    public void setUser(User applicationUser)  { this.applicationUser = applicationUser }
+    public User getUser() { return applicationUser; }
+    public void setUser(User applicationUser)  { this.applicationUser = applicationUser; }
     public Category getCategory() {
         return category;
     }
