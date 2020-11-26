@@ -2,4 +2,8 @@
 .idea/
 
 # Ignore punchclock maven database
-.db
+punchclock.trace.db
+punchclock.mv.db
+
+# Ignore gradle
+.gradle/

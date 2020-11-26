@@ -14,4 +14,6 @@ public class SecurityConstants {
     public static final String GET_INDEX_HTML_URL = "/index.html";
     public static final String GET_INDEX_JS = "/index.js";
     public static final String GET_LOGIN_URL = "/login";
+    public static final String GET_HOMEPAGE_HTML = "/homepage.html";
+    public static final String GET_HOMEPAGE_JS = "/homepage.js";
 }
