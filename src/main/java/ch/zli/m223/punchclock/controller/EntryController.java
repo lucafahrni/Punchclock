@@ -41,6 +41,13 @@ public class EntryController {
         entry.setUser(applicationUser);
         return entryService.createEntry(entry);
     }
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Entry updateEntry(@RequestBody long id, @RequestBody Entry entry, Principal principal) {
+        User applicationUser = userDetailsService.getUserByUsername(principal.getName());
+        if (!applicationUser.getRole().equals("admin")) throw new BadRequestException();
+        return entryService.updateEntry(entry);
+    }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -49,11 +56,5 @@ public class EntryController {
         entryService.deleteEntry(id);
     }
 
-    @PutMapping("/{id}")
-    @ResponseStatus(HttpStatus.OK)
-    public Entry updateEntry(@RequestBody long id, @RequestBody Entry entry, Principal principal) {
-        User applicationUser = userDetailsService.getUserByUsername(principal.getName());
-        if (!applicationUser.getRole().equals("admin")) throw new BadRequestException();
-        return entryService.updateEntry(entry);
-    }
+
 }

@@ -62,3 +62,9 @@ document.addEventListener('DOMContentLoaded', function(){
     createEntryForm.addEventListener('submit', createEntry);
     indexEntries();
 });
+
+function deleteEntry(id){
+    fetch(`${URL}/entries/` + id, {
+        method: 'DELETE',
+    })
+}

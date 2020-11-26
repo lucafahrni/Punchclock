@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Register</title>
+    <title>Users</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="register.js" type="application/javascript"></script>
+    <script src="user.js" type="application/javascript"></script>
 </head>
 <body>
-<form id="RegisterForm">
+<form id="editUserForm">
     <input type="text" id="username" name="username" placeholder="username">
     <br>
     <input type="password" id="password" name="password" placeholder="password">
 
-    <input type="submit" id="register" name="register" value="register">
+    <input type="submit" id="submit" value="login">
+    <br>
+    <br>
+    <input type="button" onclick="window.location.href = 'http://localhost:8081/register.html';" value="register"/>
 </form>
 </body>
 </html>

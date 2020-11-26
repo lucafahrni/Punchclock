@@ -18,10 +18,10 @@
             <label for="checkOut">Check out</label>
             <input type="date" name="checkOutDate" id="checkOut" >
             <input type="time" name="checkOutTime" >
-            <input type="submit" value="Save" />
+            <input type="submit" value="save" />
             <p></p>
-            <input type="text" value="" id="deleteId">
-            <input type="submit" value="delete" id="delete" />
+            <input type="button" onclick="window.location.href = 'http://localhost:8081/user.html';" value="Get to Users"/>
+            <input type="button" value="delete" onclick="deleteEntry(document.getElementById('entryId').value)"/>
         </form>
         </form>
         <table>
