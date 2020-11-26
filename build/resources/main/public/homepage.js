@@ -1,5 +1,6 @@
 const URL = 'http://localhost:8081';
-let entries = [];
+
+let entries= [], categories =[], users =[], role = []
 
 const dateAndTimeToDate = (dateString, timeString) => {
     return new Date(`${dateString}T${timeString}`).toISOString();

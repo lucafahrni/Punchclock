@@ -1,5 +1,7 @@
 const URL = "http://localhost:8081"
 
+let entries= [], categories =[], users =[], role = []
+
 document.addEventListener('DOMContentLoaded', function(){
     const createEntryForm = document.querySelector('#createLoginForm');
     createEntryForm.addEventListener('submit', (e) => login(e));
@@ -15,14 +17,15 @@ const login = (e) =>{
     fetch(`${URL}/login`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': localStorage.getItem("Token")
         },
         body: JSON.stringify(login)
     }).then((result) => {
         console.log(result)
         if (result.status == 200){
-        localStorage.setItem("Token", result.headers.get("Authorization"))
-            window.location.replace(`${URL}/homepage.html`)
+        localStorage.setItem("Token", result.headers.get("Authorization"));
+            window.location.replace(`${URL}/homepage.html`);
 
     }
 
