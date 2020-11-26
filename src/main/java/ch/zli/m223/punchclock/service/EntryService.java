@@ -18,15 +18,18 @@ public class EntryService {
     public EntryService(EntryRepository entryRepository) {
         this.entryRepository = entryRepository;
     }
-
+    //Entry wird erstellt und gesaved
     public Entry createEntry(Entry entry) {
         return entryRepository.saveAndFlush(entry);
     }
+    //Entry wird geupdated und gesaved
     public Entry updateEntry(Entry entry) { return entryRepository.save(entry); }
-    public void deleteEntry(Long id) {
-        entryRepository.deleteById(id);
-    }
+    //Alle Entries
     public List<Entry> findAll() {
         return entryRepository.findAll();
+    }
+    //Entry wird gelöscht
+    public void deleteEntry(Long id) {
+        entryRepository.deleteById(id);
     }
 }

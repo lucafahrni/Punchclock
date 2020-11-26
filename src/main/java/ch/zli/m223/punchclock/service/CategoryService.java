@@ -21,9 +21,13 @@ public class CategoryService {
     private CategoryRepository categoryRepository;
 
     public CategoryService(CategoryRepository categoryRepository) { this.categoryRepository = categoryRepository; }
-
-    public Category createCategory(Category category) { return categoryRepository.saveAndFlush(category); }
-    public Category updateCategory(Category category) { return categoryRepository.save(category); }
-    public void deleteCategory(Long id) { categoryRepository.deleteById(id); }
+    //Alle Kategorien
     public List<Category> findAll(){ return categoryRepository.findAll(); }
+    //Kategorie wird erstellt und gesaved
+    public Category createCategory(Category category) { return categoryRepository.saveAndFlush(category); }
+    //Kategorie wird geupdated und gesaved
+    public Category updateCategory(Category category) { return categoryRepository.save(category); }
+    //Kategorie wird gelöscht
+    public void deleteCategory(Long id) { categoryRepository.deleteById(id); }
+
 }
