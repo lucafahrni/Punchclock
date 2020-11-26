@@ -1,27 +1,25 @@
-const URL = "http://localhost:8081/user.html"
+const URL = "http://localhost:8081/category.html"
 
-let password =[], username =[], role = []
+let category =[]
 
 document.addEventListener('DOMContentLoaded', function(){
-    const createEntryForm = document.querySelector('#editUserForm');
-    createEntryForm.addEventListener('submit', (e) => updateUser(e));
+    const createEntryForm = document.querySelector('#createCategoryForm');
+    createEntryForm.addEventListener('submit', (e) => updateCategory(e));
 });
 
-const updateUser = (e) =>{
+const updateCategory = (e) =>{
     e.preventDefault();
     const formData = new FormData(e.target);
     const user = {};
-    user['username'] = formData.get('username');
-    user['password'] = formData.get('password');
-    user['role'] = formData.get('role');
+    category['category'] = formData.get('category');
 
-    fetch(`${URL}/users`, {
-        method: 'PUT',
+    fetch(`${URL}/categories`, {
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': localStorage.getItem("Token")
         },
-        body: JSON.stringify({username, password, role})
+        body: JSON.stringify({category})
     }).then((result) => {
         console.log(result)
         if (result.status == 200){

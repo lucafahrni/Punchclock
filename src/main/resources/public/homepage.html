@@ -20,8 +20,13 @@
             <input type="time" name="checkOutTime" >
             <input type="submit" value="save" />
             <p></p>
-            <input type="button" onclick="window.location.href = 'http://localhost:8081/user.html';" value="Get to Users"/>
+            <input type="text" name="entryId" id="entryId"></input>
             <input type="button" value="delete" onclick="deleteEntry(document.getElementById('entryId').value)"/>
+            <br>
+            <br>
+            <input type="button" onclick="window.location.href = 'http://localhost:8081/user.html';" value="Go to Users"/>
+            <br>
+            <input type="button" onclick="window.location.href = 'http://localhost:8081/category.html';" value="Go to Categories"/>
         </form>
         </form>
         <table>

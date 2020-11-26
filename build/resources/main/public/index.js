@@ -17,14 +17,13 @@ const login = (e) =>{
     fetch(`${URL}/login`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
-            'Authorization': localStorage.getItem("Token")
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify(login)
     }).then((result) => {
         console.log(result)
         if (result.status == 200){
-        localStorage.setItem("Token", result.headers.get("Authorization"));
+        localStorage.setItem("token", result.headers.get("Authorization"));
             window.location.replace(`${URL}/homepage.html`);
 
     }

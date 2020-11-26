@@ -10,15 +10,59 @@
     <script src="user.js" type="application/javascript"></script>
 </head>
 <body>
-<form id="editUserForm">
-    <input type="text" id="username" name="username" placeholder="username">
-    <br>
-    <input type="password" id="password" name="password" placeholder="password">
-
-    <input type="submit" id="submit" value="login">
-    <br>
-    <br>
-    <input type="button" onclick="window.location.href = 'http://localhost:8081/register.html';" value="register"/>
+<form id="createUserForm">
+</div>
+<div id="adduser">
+    <h3>Add user</h3>
+    <form id="addUserForm">
+        <div class="form-group">
+            <label for="addUserRole">Role</label>
+            <select required id="addUserRole">
+                <option value="admin">admin</option>
+                <option value="user">user</option>
+            </select>
+        </div>
+        <div class="addUserName">
+            <label for="addUserUsername">Username</label>
+            <input type="text"  id="addUserUsername"
+                   placeholder="Username">
+        </div>
+        <div class="addUserPassword">
+            <label for="addUserPassword">Password</label>
+            <input type="password" id="addUserPassword"
+                   placeholder="Password">
+        </div>
+        <button type="submit">Add</button>
+    </form>
+    <button type="button">Cancel</button>
+</div>
+<form id="editUser">
+    <br><br><br>
+    <h3>Edit user</h3>
+    <div class="EditUserRole">
+        <label for="editUser">UserId</label>
+        <input type="text"  id="UserId"
+               placeholder="UserId">
+        <label for="editUserRole">Role</label>
+        <select id="editUserRole">
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+        </select>
+    </div>
+    <div class="EditUserUserName">
+        <label for="editUserUsername">Username</label>
+        <input type="text" id="editUserUsername"
+               placeholder="Username">
+    </div>
+    <div class="EditUserPassword">
+        <label for="editUserPassword">Password</label>
+        <input type="password"  id="editUserPassword"
+               placeholder="Password">
+    </div>
+    <button onclick="EditCategory()">Edit User</button>
+<br>
+    <input type="button" onclick="window.location.href = 'http://localhost:8081/homepage.html';" value="Back"/>
+</form>
 </form>
 </body>
 </html>

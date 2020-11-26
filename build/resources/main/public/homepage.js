@@ -1,6 +1,6 @@
 const URL = 'http://localhost:8081';
 
-let entries= [], categories =[], users =[], role = []
+let entries= [];
 
 const dateAndTimeToDate = (dateString, timeString) => {
     return new Date(`${dateString}T${timeString}`).toISOString();
@@ -16,7 +16,8 @@ const createEntry = (e) => {
     fetch(`${URL}/entries`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': localStorage.getItem("token")
         },
         body: JSON.stringify(entry)
     }).then((result) => {

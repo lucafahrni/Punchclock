@@ -1,25 +1,27 @@
 const URL = "http://localhost:8081/user.html"
 
-let entries= [], categories =[], users =[], role = []
+let password =[], username =[], role = []
 
 document.addEventListener('DOMContentLoaded', function(){
     const createEntryForm = document.querySelector('#editUserForm');
-    createEntryForm.addEventListener('submit', (e) => editUser(e));
+    createEntryForm.addEventListener('submit', (e) => updateUser(e));
 });
 
-const login = (e) =>{
+const updateUser = (e) =>{
     e.preventDefault();
     const formData = new FormData(e.target);
     const user = {};
     user['username'] = formData.get('username');
+    user['password'] = formData.get('password');
+    user['role'] = formData.get('role');
 
     fetch(`${URL}/users`, {
-        method: 'POST',
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': localStorage.getItem("Token")
         },
-        body: JSON.stringify(user)
+        body: JSON.stringify({username, password, role})
     }).then((result) => {
         console.log(result)
         if (result.status == 200){
